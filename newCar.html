@@ -1,0 +1,121 @@
+
+<html>
+<head>
+<title>Enter data</title>
+</head>
+<link rel="stylesheet" type="text/css" href="formStyle.css">
+<body>
+	<div class="container">
+
+		<form id="contact" action="http://localhost/project%202/savedcar.php"
+			method="get">
+
+			<h3>Evill New Car Contact Form</h3>
+			<h4>Personal Info</h4>
+			<fieldset>
+				<input placeholder="Your name" type="text" name="name" id="name"
+					tabindex="1" required autofocus>
+			</fieldset>
+			<fieldset>
+				<input placeholder="Your Address" type="text" name="address"
+					id="address" tabindex="2" required>
+			</fieldset>
+			<fieldset>
+				<input placeholder="Your City" type="text" name="city" id="city"
+					tabindex="3" required>
+			</fieldset>
+
+			<fieldset>
+				<select name="Province" id="province" tabindex="4">
+					<option value="Alberta">Alberta</option>
+					<option value="British Columbia">British Columbia</option>
+					<option value="New Brunswick">New Brunswick</option>
+					<option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+					<option value="Nova Scottia">Nova Scotia</option>
+					<option value="Nova Scottia">Manitoba</option>
+					<option value="Ontario">Ontario</option>
+					<option value="Prince Edward Island">Prince Edward Island</option>
+					<option value="Quebec">Quebec</option>
+					<option value="Saskatchewan">Saskatchewan</option>
+					<option value="Northwest Territories">Northwest Territories</option>
+					<option value="Nunavut">Nunavut</option>
+					<option value="Yukon">Yukon</option>
+				</select>
+
+			</fieldset>
+			<fieldset>
+				<input placeholder="Your Postal Code" type="text" name="postal"
+					id="postal" pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]"
+					title=" ie.: A1B 0A0" tabindex="5" required>
+			</fieldset>
+			<fieldset>
+				<input placeholder="Your Phone Number" type="tel" name="phone"
+					id="phone" pattern="\d{3}[\-]\d{3}[\-]\d{4}"
+					title=" ie.:999-999-1234." tabindex="6" required>
+			</fieldset>
+			<fieldset>
+				<input placeholder="Your Email Address" type="email" name="email"
+					id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+					title=" ie.:user@gmail.com" tabindex="7" required>
+			</fieldset>
+			<h4>Vehicle Info</h4>
+			<fieldset>
+				<input placeholder="Make" type="text" name="make" id="make"
+					title="ie.: BMW" tabindex="8" required>
+			</fieldset>
+			<fieldset>
+				<input placeholder="Model" type="text" name="model" id="model"
+					title="ie.: 4 Series Coupé" tabindex="9" required>
+			</fieldset>
+			<fieldset>
+				<input placeholder="Year" type="number" name="year" id="year"
+					pattern="\d{4}" title=" 1999" min="1900" max="2019" tabindex="10"
+					required>
+			</fieldset>
+			<h4>Vehicle Features</h4>
+			<fieldset id=features>
+				<input type="checkbox" name="AC" id="AC" value="AC"
+					style="width: 70px"> Air Conditioner<br> <input
+					type="checkbox" name="Seats" id="Seats" value="Seats"
+					style="width: 70px"> Heated Seats<br> <input
+					type="checkbox" name="Camera" id="Camera" value="Camera"
+					style="width: 70px"> BackUp Camera<br> <input
+					type="checkbox" name="TPMS" id="TPMS" value="TPMS"
+					style="width: 70px"> TPMS
+			</fieldset>
+			<h4>Vehicle Ownership</h4>
+			<fieldset>
+				<input type="radio" name="owner" id="ownerNoPrev"
+					value="No Previous Owner" style="width: 70px" checked> No
+				Previous Owner <br> <input type="radio" name="owner"
+					id="ownerOnePrev" value="Only One Previous Owner"
+					style="width: 70px"> Only One Previous Owner<br> <input
+					type="radio" name="owner" id="ownerMoreOne"
+					value="More than One Previous Owner" style="width: 70px">
+				More Than One Previous Owner<br>
+			</fieldset>
+			<h4>Mileage</h4>
+			<fieldset>
+				<input type="range" min="0" max="999999" step="1" value="0"
+					name="mileage" id="mileage" class="form-input" onChange="change();"
+					style="height: 28px; width: 78%; padding: 0;"> <span
+					id="range-label">1000K</span>
+
+				<!-- Script for range input label -->
+				<script>
+					var rangeLabel = document.getElementById("range-label");
+					var mileage = document.getElementById("mileage");
+					function change() {
+						rangeLabel.innerText = mileage.value + "K";
+					}
+				</script>
+			</fieldset>
+			<fieldset>
+				<button type="submit">Save</button>
+				<a href="home.html"><button type="button">Home</button></a>
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>
+
